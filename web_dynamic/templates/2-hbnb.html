@@ -7,11 +7,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Holberton AirBnB</title>
-
-    <!-- Import JQuery -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="{{url_for('static', filename='scripts/2-hbnb.js')}}"></script>
     <!-- FAVICON -->
+    <script src="{{url_for('static', filename='scripts/2-hbnb.js')}}?{{cache_id}}"></script>
 
     <link rel="shortcut icon" href="{{ url_for('static', filename='images/icon.png') }}?{{cache_id}}">
 
@@ -74,16 +72,13 @@
 
 	  <div class="amenities">
 	    <h3>Amenities</h3>
-	    <h4 style="overflow: hidden; white-space: nowrap;text-overflow: el\
-    lipsis;">&nbsp;</h4>
+	    <h4 style="overflow: hidden; white-space: nowrap;text-overflow: ellipsis;">&nbsp;</h4>
 	    <ul class="popover">
+	      <form action=''>
 	      {% for amenity in amens|sort(attribute='name') %}
-	      <LI>
-		<INPUT data-id="{{amenity.id}}" data-name="{{amenity.name}}" type="checkbox" style="margin-right: 10px;">
-		{{ amenity.name }}
-		</INPUT>
-	      </LI>
+	      <LI><input data-id="{{amenity.id}}" data-name="{{amenity.name}}" type="checkbox" style="margin-right:10px;">{{ amenity.name }}</input></LI>
 	      {% endfor %}
+	      </form>
 	    </ul>
 	  </div>
 
