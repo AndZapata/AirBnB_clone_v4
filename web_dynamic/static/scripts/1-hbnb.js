@@ -10,12 +10,12 @@ function checkAmenities () {
     amenitiesId = [];
     $(".amenities input:checked").each(function (){
 	amenitiesName.push($(this).attr("data-name"));
-	amenitiesId.push($(this).attr("data-name"));
+	amenitiesId.push($(this).attr("data-id"));
     });
     if (amenitiesName.length === 0) {
 	$('.amenities h4').html('&nbsp;')
     } else {
-	$('.amenities h4').text(amenitiesName.join(", "))	
+	$('.amenities h4').text(amenitiesName.join(", "))
     }
 
 
